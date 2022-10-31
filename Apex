@@ -1,0 +1,32 @@
+List<Integer> numList = new List<Integer>{1,2,3,2,1,4,2};
+Map<Integer,Integer> numMap = new Map<Integer,Integer>();
+
+for(integer n : numList)
+{
+    if(numMap.containsKey(n))
+    {
+        Integer numFreq = numMap.get(n);
+        System.debug('Frequency of Number-->'+numFreq);
+        numMap.put(n,numFreq+1);
+        System.debug('Map key-->'+numMap.keyset()+'Map value-->'+numMap.values());
+    }
+    else 
+    {
+        numMap.put(n,1);
+        System.debug('Number Map Else-->'+numMap.values());
+    }
+}
+
+Integer biggestFreq = 0;
+Integer biggestValue = 0;
+
+for(Integer num : numMap.values())
+{
+   if(numMap.get(num) > biggestFreq)
+   {
+       biggestFreq = numMap.get(num);
+       System.debug('Biggest Frequency is-->'+biggestFreq);
+       biggestValue = num;
+       System.debug('Biggest Number is-->'+biggestValue);
+   }
+}
